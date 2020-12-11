@@ -23,6 +23,7 @@ import { ObjectiveComponent } from './content/objective/objective.component';
 import { TransactionComponent } from './content/transaction/transaction.component';
 import { InstructionComponent } from './content/instruction/instruction.component';
 import { TaxComponent } from './content/tax/tax.component';
+import { LoginComponent } from './content/login/login.component';
 
 const routes:Routes=[
   {path:'dashboard',component:DashboardComponent,pathMatch:'full'},
@@ -42,8 +43,9 @@ const routes:Routes=[
   {path:'transfert',component:TransfertComponent,pathMatch:'full'},
   {path:'user',component:UserComponent,pathMatch:'full'},
   {path:'role',component:RoleComponent,pathMatch:'full'},
-  {path:'',redirectTo:'dashboard',pathMatch:'full'},
-  {path:'**',redirectTo:'dashboard',pathMatch:'full'}]
+  {path:'login',component:LoginComponent,pathMatch:'full'},
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path:'**',redirectTo:'login',pathMatch:'full'}]
 
 
 @NgModule({
