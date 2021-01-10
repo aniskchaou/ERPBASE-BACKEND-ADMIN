@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { URLLoader } from './../../../../configs/URLLoader';
 
 @Component({
   selector: 'app-proposition',
   templateUrl: './proposition.component.html',
   styleUrls: ['./proposition.component.css']
 })
-export class PropositionComponent implements OnInit {
+export class PropositionComponent extends URLLoader implements OnInit {
 
-  constructor() { }
+  showsummary:boolean=false
+  showgraphic:boolean=false
+  
+  constructor() {
+    super()
+   }
+  
 
-  ngOnInit(): void {
-  }
+ngOnInit() {
+ super.loadScripts();
+}
 
 }
