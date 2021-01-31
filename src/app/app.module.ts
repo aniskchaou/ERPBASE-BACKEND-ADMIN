@@ -206,7 +206,9 @@ const routes:Routes=[
   imports: [
   
 BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled'
+    })
   ],
   providers: [{provide: APP_BASE_HREF, useValue: ''}],
   bootstrap: [AppComponent]
