@@ -106,6 +106,7 @@ const routes:Routes=[
   { path: 'configuration', component: ConfigurationComponent, pathMatch: 'full' },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'event', component: EventComponent, pathMatch: 'full' },
+  { path: 'requestprice', component: RequestPriceComponent, pathMatch: 'full' },
   {path:'**',redirectTo:'login',pathMatch:'full'}]
 
 
