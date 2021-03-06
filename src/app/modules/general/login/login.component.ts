@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { URLLoader } from './../../../configs/URLLoader';
+import { URLLoader } from '../../../main/configs/URLLoader';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +10,11 @@ export class LoginComponent extends URLLoader implements OnInit {
 
   constructor() {
     super()
-   }
-  
+  }
 
-ngOnInit() {
- super.loadScripts();
-}
+
+  ngOnInit() {
+    super.loadScripts();
+  }
 
 }

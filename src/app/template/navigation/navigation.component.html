@@ -19,10 +19,33 @@
             <span>Tableau de bord</span></a>
     </li>
 
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse78" aria-expanded="true" aria-controls="collapse78">
+            <i class="fas fa-fw fa-shapes"></i>
+            <span>Modules</span>
+        </a>
+        <div id="collapse78" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <!--  <a routerLinkActive="activeLink" class="collapse-item" routerLink="/modules">modules</a> -->
+                <input type="checkbox" [(ngModel)]="sales" /> Ventes <br />
+                <input type="checkbox" [(ngModel)]="buy" /> Achats <br />
+                <input type="checkbox" [(ngModel)]="production" /> Production<br />
+                <input type="checkbox" [(ngModel)]="staff" /> Equipes<br />
+                <input type="checkbox" [(ngModel)]="accounting" /> Compatibilité<br />
+                <input type="checkbox" [(ngModel)]="employees" /> Employées<br />
+                <input type="checkbox" [(ngModel)]="fleet" /> Flottes<br />
+                <input type="checkbox" [(ngModel)]="maintenance" /> Maintenance<br />
+                <input type="checkbox" [(ngModel)]="quality" /> Qualité<br />
+                <input type="checkbox" [(ngModel)]="inventory" /> Inventaire<br />
+                <input type="checkbox" [(ngModel)]="payroll" /> Paie<br />
+            </div>
+        </div>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="sales">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse55" aria-expanded="true"
             aria-controls="collapse55">
             <i class="fas fa-fw fa-piggy-bank"></i>
@@ -30,17 +53,17 @@
         </a>
         <div id="collapse55" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-sale">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/quote">Devis</a>
-                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/order">Commandes</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/order">Bon de Commandes</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/client">Clients</a>
-                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/invoice">Factures</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/invoice-client">Factures</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/item">Articles</a>
             </div>
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="buy">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse54" aria-expanded="true"
             aria-controls="collapse54">
             <i class="fas fa-fw fa-shopping-bag"></i>
@@ -48,16 +71,18 @@
         </a>
         <div id="collapse54" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-buy">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/requestprice">Demandes de prix</a>
-                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/order">Bons de commandes</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/order-supplier">Bons de
+                    commandes</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/invoice-supplier">Factures</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/supplier">Fournisseurs</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/item">Articles</a>
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/category-item">Catégories</a>
             </div>
         </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="inventory">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse53" aria-expanded="true"
             aria-controls="collapse53">
             <i class="fas fa-fw fa-boxes"></i>
@@ -65,10 +90,8 @@
         </a>
         <div id="collapse53" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-inventory">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/transfert">Transferts</a>
-                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/replanishment">Réapprovisionnement</a>
-                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/adjust">Ajustements</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/warehouse">Entrepots</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/type-operation"> Type
                     d'opérations</a>
@@ -78,7 +101,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="production">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse18" aria-expanded="true"
             aria-controls="collapse18">
             <i class="fas fa-fw fa-hammer"></i>
@@ -86,7 +109,7 @@
         </a>
         <div id="collapse18" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-production">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/order-production">Ordres de
                     production</a>
 
@@ -94,7 +117,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="staff">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse8" aria-expanded="true"
             aria-controls="collapse8">
             <i class="fas fa-fw fa-users"></i>
@@ -102,7 +125,7 @@
         </a>
         <div id="collapse8" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-staff">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/rh">RH</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/commercial">Commerciale</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/production">Production</a>
@@ -111,7 +134,7 @@
             </div>
         </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="accounting">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse22" aria-expanded="true"
             aria-controls="collapse22">
             <i class="fas fa-fw fa-search-dollar"></i>
@@ -119,7 +142,7 @@
         </a>
         <div id="collapse22" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-accounting">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/invoice-client">Facture client</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/payment-client">Paiement client</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/invoice-supplier">Facture
@@ -132,7 +155,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="employees">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse23" aria-expanded="true"
             aria-controls="collapse23">
             <i class="fas fa-fw fa-people-carry"></i>
@@ -140,7 +163,7 @@
         </a>
         <div id="collapse23" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-employee">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/employee">Employés</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/contract">Contrats</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/occupation">Postes</a>
@@ -148,7 +171,7 @@
             </div>
         </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="fleet">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse43" aria-expanded="true"
             aria-controls="collapse43">
             <i class="fas fa-fw fa-car"></i>
@@ -156,7 +179,7 @@
         </a>
         <div id="collapse43" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-fleet">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/vehicule">Véhicules</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/contract-vehicule">Contrats</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/model">Modèles</a>
@@ -165,7 +188,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="payroll">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse21" aria-expanded="true"
             aria-controls="collapse21">
             <i class="fas fa-fw fa-money-check-alt"></i>
@@ -174,17 +197,18 @@
         <div id="collapse21" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/analysis-payroll">Analyse</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/benefit">Prestations</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/conflict">Conflits</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/pay">A payer</a>
                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/payslip">bultins de paie</a>
-
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/payslip">Temps de travail</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/payslip">Type de structure</a>
             </div>
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="maintenance">
         <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
             data-target="#collapse11" aria-expanded="true" aria-controls="collapse11">
             <i class="fas fa-fw fa-tools"></i>
@@ -200,8 +224,8 @@
     </li>
 
     <li class="nav-item">
-        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse52"
-            aria-expanded="true" aria-controls="collapse52">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse52" aria-expanded="true" aria-controls="collapse52">
             <i class="fas fa-fw fa-file"></i>
             <span>Documents</span>
         </a>
@@ -230,8 +254,8 @@
     </li>
 
     <li class="nav-item">
-        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse41"
-            aria-expanded="true" aria-controls="collapse41">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse41" aria-expanded="true" aria-controls="collapse41">
             <i class="fas fa-fw fa-calendar-check"></i>
             <span>Rendez vous</span>
         </a>
@@ -247,8 +271,8 @@
     </li>
 
     <li class="nav-item">
-        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse77"
-            aria-expanded="true" aria-controls="collapse77">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse77" aria-expanded="true" aria-controls="collapse77">
             <i class="fas fa-fw fa-tasks"></i>
             <span>Projets</span>
         </a>
@@ -261,10 +285,10 @@
             </div>
         </div>
     </li>
-
+    <!--
     <li class="nav-item">
-        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse45"
-            aria-expanded="true" aria-controls="collapse45">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse45" aria-expanded="true" aria-controls="collapse45">
             <i class="fas fa-fw fa-address-book"></i>
             <span>Contacts</span>
         </a>
@@ -276,6 +300,7 @@
             </div>
         </div>
     </li>
+-->
 
     <li class="nav-item">
         <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
@@ -293,54 +318,54 @@
     </li>
 
 
-    <li class="nav-item">
-        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse56"
-            aria-expanded="true" aria-controls="collapse56">
+    <li class="nav-item" *ngIf="quality">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse56" aria-expanded="true" aria-controls="collapse56">
             <i class="fas fa-fw fa-award"></i>
             <span>Qualité</span>
-            </a>
-            <div id="collapse56" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-            
-                    <a routerLinkActive="activeLink" class="collapse-item" routerLink="/control-point">Points de
-                        controle</a>
-                    <a routerLinkActive="activeLink" class="collapse-item" routerLink="/control-quality">Controle de
-                        qualité</a>
-                    
-                    
-                    </div>
-                    </div>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
-                            data-target="#collapse75" aria-expanded="true" aria-controls="collapse75">
-                            <i class="fas fa-fw fa-user-lock"></i>
-                            <span>Groupes & Roles</span>
-                        </a>
-                        <div id="collapse75" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                    
-                                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/groupe">Groupes</a>
-                                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/role">Roles</a>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <li class="nav-item">
-                        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
-                            data-target="#collapse78" aria-expanded="true" aria-controls="collapse78">
-                            <i class="fas fa-fw fa-shapes"></i>
-                            <span>Modules</span>
-                        </a>
-                        <div id="collapse78" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/modules">modules</a>
+        </a>
+        <div id="collapse56" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/control-point">Points de
+                    controle</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/control-quality">Controle de
+                    qualité</a>
+
 
             </div>
         </div>
     </li>
 
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse75" aria-expanded="true" aria-controls="collapse75">
+            <i class="fas fa-fw fa-user-lock"></i>
+            <span>Groupes & Roles</span>
+        </a>
+        <div id="collapse75" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/groupe">Groupes</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/role">Roles</a>
+            </div>
+        </div>
+    </li>
+    <!--
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse78" aria-expanded="true" aria-controls="collapse78">
+            <i class="fas fa-fw fa-shapes"></i>
+            <span>Modules</span>
+        </a>
+        <div id="collapse78" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/modules">modules</a>
+
+            </div>
+        </div>
+    </li>
+-->
     <li class="nav-item">
         <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" routerLink="/configuration">
             <i class="fas fa-fw fa-cog"></i>

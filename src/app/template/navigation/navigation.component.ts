@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  sales: boolean = true
+  buy: boolean = true
+  production: boolean = true
+  staff: boolean = true
+  accounting: boolean = true
+  employees: boolean = true
+  fleet: boolean = true
+  maintenance: boolean = true
+  quality: boolean = true
+  payroll: boolean = true
+  inventory: boolean = true
   constructor() { }
 
   ngOnInit(): void {
