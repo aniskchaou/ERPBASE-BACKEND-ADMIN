@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Admin\Desktop\accountt\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! C:\projects\ERPBASE-FRONTEND-ADMIN\src\polyfills.ts */"hN/g");
 
 
 /***/ }),
